@@ -1,17 +1,22 @@
 const express = require("express");
+const cors = require('cors');
 
 const app = express();
-const PORT = 3000;
+// const PORT = 3000;
 
-app.get("/api", (req, res) => {
+app.use(cors());
+
+app.get("/", (req, res) => {
     res.json({
-        email: "olumideolubosede@gmail.com", // Replace with your registered email
+        email: "olumideolubosede@gmail.com",
         timestamp: new Date().toISOString(),
-        github_url: "https://github.com/yourusername/hng12-api" // Replace with your GitHub repo URL
+        github_url: "https://github.com/LordOlumide/hng_12_backend_task_0"
     });
 });
 
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
+// app.listen(PORT, () => {
+//     console.log(`Server is running on port ${PORT}`);
+// });
 
+// export the app for vercel serverless functions
+module.exports = app;
