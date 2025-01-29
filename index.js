@@ -9,7 +9,7 @@ app.use(cors());
 app.get("/", (req, res) => {
     res.json({
         email: "olumideolubosede@gmail.com",
-        timestamp: new Date().toISOString(),
+        current_datetime: new Date().toISOString(),
         github_url: "https://github.com/LordOlumide/hng_12_backend_task_0"
     });
 });
